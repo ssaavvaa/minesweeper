@@ -1,0 +1,90 @@
+
+
+.wrapper{
+  max-width: 1000px;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.board{
+padding:20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+input{
+  padding:10px;
+  width:300px;
+}
+
+h1{
+  margin-top: 30px;
+}
+
+.startButton{
+  width:200px;
+  padding:10px;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.restart{
+  display:none;
+  margin:10px;
+  width:200px;
+  padding:10px;
+}
+.newGame{
+  width:200px;
+  padding:10px;
+  display:none;
+}
+
+.status{
+  color:blue;
+  font-weight: 700;
+  font-size: 24px;
+  display: none;
+}
+
+.intro{
+  max-width: 1000px;
+  margin: 0 auto;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.tile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:30px;
+  height:30px;
+  background: black;
+  text-align: center;
+  font-weight: bold;
+  border:1px solid white;
+}
+
+.tile:hover{
+  background: rgba(0, 0, 0, 0.788);
+}
