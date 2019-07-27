@@ -1,4 +1,4 @@
-
+import $ from "jquery";
 
 
 class Board {
@@ -11,16 +11,33 @@ class Board {
     this._bombBoard = Board.generateBombBoard(numberOfRows, numberOfColumns, numberOfBombs);
 }
 
+finishGame(){
 
-playMove(rowIndex,columnIndex,index){
-   this.flipTile(rowIndex,columnIndex)
-      if(this.playerBoard[rowIndex][columnIndex] === 'B'){
-         return "B"
 
-      }else if(this.hasSafeTiles()){
-        return console.log("awf")
-      }else  return "N"
- }
+
+   for(let i = 0; i < this._playerBoard.length; i +=1){
+      for(let z = 0; z < this._playerBoard[0].length; z +=1){
+         if(this._bombBoard[i][z] == "B"){
+         let span = $(".board").children()[i].children[z]
+         span.textContent = "B"
+         span.style.background = "red"
+         span.style.color = "white"
+      }else if(this._bombBoard[i][z] !== "B"){ 
+      let span = $(".board").children()[i].children[z]
+      let number = this.getNumberOfNeighborBombs(i,z)
+         span.textContent = number
+         span.style.background = "white"
+         span.style.color = "black"
+         span.style.border = "1px solid black"
+
+   }
+
+}
+}
+}
+
+
+
 
 
  flipTile(rowIndex,columnIndex){
@@ -53,13 +70,6 @@ neighborOffsets.forEach(offset => {
 }})
  return numberOfBombs;
 }
-
-
-hasSafeTiles(){
- return this._numberOfTiles === this._numberOfBombs;
-}
-
-
 
 
 
